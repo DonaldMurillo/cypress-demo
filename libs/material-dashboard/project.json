@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/material-dashboard/src",
+  "prefix": "cypress-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/material-dashboard"],
+      "options": {
+        "jestConfig": "libs/material-dashboard/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/material-dashboard/**/*.ts",
+          "libs/material-dashboard/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
