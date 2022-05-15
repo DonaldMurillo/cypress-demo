@@ -11,13 +11,17 @@
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2017", "dom"],
+    "types": ["jest", "node", "mocha", "cypress"],
+    "typeRoots": ["node_modules/@types"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cypress-demo/cypress-commands": ["libs/cypress-commands/src/index.ts"],
       "@cypress-demo/material-dashboard": [
         "libs/material-dashboard/src/index.ts"
-      ]
+      ],
+      "@cypress-demo/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

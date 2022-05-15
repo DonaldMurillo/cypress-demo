@@ -2,8 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "cypress-commands": "libs/cypress-commands",
     "material-dashboard": "libs/material-dashboard",
     "project-one": "apps/project-one",
-    "project-one-e2e": "apps/project-one-e2e"
+    "project-one-e2e": "apps/project-one-e2e",
+    "project-two": "apps/project-two",
+    "project-two-e2e": "apps/project-two-e2e",
+    "shared": "libs/shared"
   }
 }
