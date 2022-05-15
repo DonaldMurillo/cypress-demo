@@ -1,12 +1,23 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "declaration": true,
-    "declarationMap": true,
-    "inlineSources": true,
-    "types": ["mocha", "jest", "node"]
-  },
-  "exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts"],
-  "include": ["**/*.ts"]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"declaration": true,
+		"declarationMap": true,
+		"inlineSources": true,
+		"types": [
+			"mocha",
+			"jest",
+			"node",
+			"cypress"
+		]
+	},
+	"exclude": [
+		"src/test-setup.ts",
+		"**/*.spec.ts",
+		"**/*.test.ts"
+	],
+	"include": [
+		"**/*.ts"
+	]
 }
