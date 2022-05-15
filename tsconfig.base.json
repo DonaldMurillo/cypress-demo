@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@cypress-demo/cypress-commands": ["libs/cypress-commands/src/index.ts"],
+      "@cypress-demo/cypress-helper": ["libs/cypress-helper/src/index.ts"],
       "@cypress-demo/material-dashboard": [
         "libs/material-dashboard/src/index.ts"
       ],

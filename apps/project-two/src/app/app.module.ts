@@ -6,6 +6,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { SharedModule } from '@cypress-demo/shared';
 import { TestHomeComponent } from './componets/test-home/test-home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CypressHelperModule } from '@cypress-demo/cypress-helper';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
     NxWelcomeComponent,
     TestHomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, CypressHelperModule],
   providers: [],
   bootstrap: [AppComponent],
 })

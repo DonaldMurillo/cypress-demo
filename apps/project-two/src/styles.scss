@@ -2,10 +2,46 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: unset;
-    padding: unset;
+	margin: unset;
+	padding: unset;
+}
+
+code {
+	background-color: rgb(206, 208, 210);
+	padding: 0px 0.5rem;
+}
+
+cypress-demo-root {
+	display: flex;
+	min-height: 100vh;
+	width: 100vw;
+
+	> * {
+		flex: 1;
+	}
+}
+
+cypress-demo-magic-overlay {
+	display: block;
+	height: 100vh;
+	width: 400px;
+	max-width: 400px;
+	background-color: white;
+	z-index: 9999;
+
+	h1 {
+		text-align: center;
+	}
+
+	section {
+		padding: 2rem;
+	}
+}
+
+.hover-dom-node {
+	box-shadow: 0 0 6px rgb(35 173 255);
 }

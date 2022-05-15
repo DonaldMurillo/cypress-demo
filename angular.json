@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "cypress-commands": "libs/cypress-commands",
+    "cypress-helper": "libs/cypress-helper",
     "material-dashboard": "libs/material-dashboard",
     "project-one": "apps/project-one",
     "project-one-e2e": "apps/project-one-e2e",

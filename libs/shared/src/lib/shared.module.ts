@@ -20,33 +20,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DynamicCyDirective } from './directives/dynamic-cy.directive';
+import { CypressFormDirective } from './directives/cypress-form.directive';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    RouterModule,
-  ],
-  declarations: [
-    DashboardComponent,
-    NavComponent,
-    AddressFormComponent,
-    NotFoundComponent,
-    DynamicCyDirective,
-  ],
-  exports: [DashboardComponent, NavComponent, AddressFormComponent],
+	imports: [
+		CommonModule,
+		MatGridListModule,
+		MatCardModule,
+		MatMenuModule,
+		MatIconModule,
+		MatButtonModule,
+		LayoutModule,
+		MatToolbarModule,
+		MatSidenavModule,
+		MatListModule,
+		MatInputModule,
+		MatSelectModule,
+		MatRadioModule,
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
+		RouterModule,
+	],
+	declarations: [
+		DashboardComponent,
+		NavComponent,
+		AddressFormComponent,
+		NotFoundComponent,
+		DynamicCyDirective,
+		CypressFormDirective,
+	],
+	exports: [DashboardComponent, NavComponent, AddressFormComponent],
 })
-export class SharedModule {}
+export class SharedModule { }
