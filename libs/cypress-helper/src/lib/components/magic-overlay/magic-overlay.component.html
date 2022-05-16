@@ -15,11 +15,11 @@
 	 </mat-selection-list>
 </section>
 <section *ngIf="selected">
+	<button mat-mini-fab color="accent" (click)="select(null)">
+		<mat-icon>close</mat-icon>
+	</button>
 	<h1>Selected: {{ selected | getCyValue }}</h1>
 	<p>
-		<!-- <button mat-raised-button (click)="select(null)">
-			<mat-icon>close</mat-icon>
-			<span>Close</span>
-		</button> -->
+		{{ selected | elementData | json }}.
 	</p>
 </section>

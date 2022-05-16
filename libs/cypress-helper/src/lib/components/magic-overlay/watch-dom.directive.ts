@@ -3,7 +3,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 @Directive({
 	selector: '[cypressDemoWatchDom]'
 })
-export class WatchDomDirective {
+export class WatchDomDirective  {
 
 	// TODO: MAKE THIS DIRECTIVE WORK
 	@Input('cypressDemoWatchDom') set _el(ref: ElementRef) {
@@ -11,8 +11,8 @@ export class WatchDomDirective {
 		this.elRef = ref;
 		this.registerDomChangedEvent(this.elRef.nativeElement);
 	}  
-	elRef!: ElementRef;
-	constructor() { }
+	
+	constructor(private elRef: ElementRef) { }
 
 	registerDomChangedEvent(el: Node) {
 		const observer = new MutationObserver(list => {

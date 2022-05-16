@@ -14,7 +14,6 @@ export class MagicOverlayComponent implements AfterViewInit {
 	constructor(private renderer: Renderer2, private cdt: ChangeDetectorRef) { }
 
 	ngAfterViewInit(): void {
-		console.log('triggered');
 		setTimeout(() => {
 			this.elements = [
 				...new Set(this.elementRef.nativeElement.querySelectorAll('[data-cy], [data-cy-id], [data-cy-id-data]'))
@@ -32,12 +31,12 @@ export class MagicOverlayComponent implements AfterViewInit {
 
 	}
 
-	select(element: Element): void {
+	select(element: Element | null): void {
 		this.elements.forEach(el => {
 			this.renderer.removeClass(el, 'hover-dom-node');
 		})
-		this.renderer.addClass(element, 'hover-dom-node');
 		this.selected = element;
+		if (element) this.renderer.addClass(element, 'hover-dom-node');
 	}
 
 	handleDomChange(): void {
