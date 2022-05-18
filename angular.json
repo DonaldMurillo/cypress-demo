@@ -9,6 +9,7 @@
     "project-one-e2e": "apps/project-one-e2e",
     "project-two": "apps/project-two",
     "project-two-e2e": "apps/project-two-e2e",
+    "server": "apps/server",
     "shared": "libs/shared"
   }
 }
