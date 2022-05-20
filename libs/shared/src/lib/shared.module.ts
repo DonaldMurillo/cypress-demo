@@ -52,4 +52,13 @@ import { CypressFormDirective } from './directives/cypress-form.directive';
 	],
 	exports: [DashboardComponent, NavComponent, AddressFormComponent],
 })
-export class SharedModule { }
+export class SharedModule {
+	static forRoot(isProd: boolean) {
+		return {
+			ngModule: SharedModule,
+			providers: [
+				{ provide: 'isProd', useValue: isProd },
+			],
+		};
+	}
+}

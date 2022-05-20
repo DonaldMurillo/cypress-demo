@@ -7,15 +7,21 @@ import { SharedModule } from '@cypress-demo/shared';
 import { TestHomeComponent } from './componets/test-home/test-home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CypressHelperModule } from '@cypress-demo/cypress-helper';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NxWelcomeComponent,
-    TestHomeComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, CypressHelperModule],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		NxWelcomeComponent,
+		TestHomeComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		SharedModule.forRoot(environment.production),
+		CypressHelperModule
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

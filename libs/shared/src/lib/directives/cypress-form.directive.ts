@@ -1,5 +1,5 @@
-import { Directive, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { FormControl, NgControl } from '@angular/forms';
+import { Directive, ElementRef, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { NgControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 
 @Directive({
@@ -14,12 +14,15 @@ export class CypressFormDirective implements OnInit, OnDestroy {
 
 	private destroy$ = new Subject();
 	private name!: string | number | null;
-	private namedControl!: FormControl;
 
-	constructor(private element: ElementRef, private renderer: Renderer2, private _control: NgControl) { }
+	constructor(
+		private element: ElementRef, 
+		private renderer: Renderer2,
+		private _control: NgControl,
+		@Inject('isProd') private isProd: boolean) { }
 
 	ngOnInit(): void {
-		console.log(this._control.name)
+		if (this.isProd) return;
 		this.name = this._control.name
 		this.renderer.setAttribute(this.element.nativeElement, 'data-cy-id', `field:${this.name}`);
 	}

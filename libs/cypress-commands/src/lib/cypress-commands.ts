@@ -12,26 +12,26 @@ declare global {
 	namespace Cypress {
 		interface Chainable<Subject = any> {
 			/**
-			 * @CustomerCommand Selects the element with `button[data-cy-id="{id}"]`
+			 * @CustomCommand Selects the element with `button[data-cy-id="{id}"]`
 			 */
 			MyCommand_GET_Button(id: string): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `[data-cy-id="{id}"]`, optional for more specificity and html tag can be passed
+			 * @CustomCommand Selects the element with `[data-cy-id="{id}"]`, optional for more specificity and html tag can be passed
 			 * @param id 
 			 * @param htmlTag optional, this can improve readablility of test
 			 */
 			MyCommand_GET_ByCyId(id: string, htmlTag?: HtmlTag): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `[data-cy="{data}"]`, optional for more specificity and html tag can be passed
+			 * @CustomCommand Selects the element with `[data-cy="{data}"]`, optional for more specificity and html tag can be passed
 			 * @param data 
 			 * @param htmlTag optional, this can improve readablility of test
 			 */
 			MyCommand_GET_ByCyData(data: string, htmlTag?: HtmlTag): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `[data-cyid-data="{id:data}"]`, optional for more specificity and html tag can be passed
+			 * @CustomCommand Selects the element with `[data-cyid-data="{id:data}"]`, optional for more specificity and html tag can be passed
 			 * @param id 
 			 * @param data 
 			 * @param htmlTag optional, this can improve readablility of test
@@ -39,18 +39,18 @@ declare global {
 			MyCommand_GET_ByCyIdData(id: string, data: string, htmlTag?: HtmlTag): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `button[data-cy-id="continue"]`
+			 * @CustomCommand Selects the element with `button[data-cy-id="continue"]`
 			 */
 			MyCommand_GET_FormContinueButton(): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `[data-cy-id="field:{id}"]`
+			 * @CustomCommand Selects the element with `[data-cy-id="field:{id}"]`
 			 * @param id 
 			 */
 			MyCommand_GET_FormControlById(id: string): Chainable<JQuery<HTMLElement>>;
 
 			/**
-			 * @CustomerCommand Selects the element with `[data-cy-id="error:{id}"]`
+			 * @CustomCommand Selects the element with `[data-cy-id="error:{id}"]`
 			 * @param id 
 			 */
 			MyCommand_GET_FormControlErrorById(id: string): Chainable<JQuery<HTMLElement>>;
@@ -88,7 +88,7 @@ function MyCommand_GET_ByCyData(data: string, htmlTag?: HtmlTag) {
 
 function MyCommand_GET_ByCyIdData(id: string, data: string, htmlTag?: HtmlTag) {
 	if (htmlTag) return cy.get(`${htmlTag}[data-cy-id-data="${id}-${htmlTag}:${data}"]`);
-	else return cy.get(`[data-cy-id="${id}:${data}"]`);
+	else return cy.get(`[data-cy-id-data="${id}:${data}"]`);
 }
 
 function MyCommand_GET_FormContinueButton() {

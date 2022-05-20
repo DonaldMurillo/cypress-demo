@@ -20,12 +20,13 @@ module.exports = (config) => {
 	}
 
 	// Angular compiler plugin has this directTemplateLoading option which overrides our loader if we do not make it false
+	// this step can be simplified
 	const index = config.plugins.findIndex(p => {
 		return p instanceof AngularCompilerPlugin.AngularWebpackPlugin;
 	});
 
 	try {
-		
+		// TODO: CLEAN UP
 		const newConfig = { 
 			...config,
 			module: { ...config.module, rules: config.module.rules.filter(m => m.loader !== 'raw-loader'), },
